@@ -13,7 +13,7 @@ $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 </head>
 <body>
 <div class="container">
-    <h1 class="rainbow">Vliegtuigen opgeven</h1>
+    <h1 class="rainbow">Vlucht Plannen</h1>
 </div>
 <header class="header sticky sticky--top js-header">
 

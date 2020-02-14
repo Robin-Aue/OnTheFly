@@ -1,85 +1,196 @@
-body {
-    background-image: url(337370.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+body{
+  background: url(vliegtuig.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-h1 {
-    text-align: right;
+@use postcss-cssnext;
+
+/* helpers/grid.css */
+
+.grid {
+  margin-left: 500px;
+  margin-right: 500px;
+  max-width: 42em;
+  width: 100%;
 }
 
-* {box-sizing: border-box;}
+/* helpers/sticky.css */
+
+.sticky {
+  position: sticky;
+  will-change: transform;
+}
+
+.sticky--top {
+  top: 0;
+}
+
+/* layout/base.css */
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
 
 body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.75;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
+/* layout/header.css */
+
+.header {
+  background-color: #0099ff;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
-.topnav a {
-  float: left;
+
+.header::after {
+  bottom: 0;
+  box-shadow: 0 0.0625em 0.5em rgba(0, 0, 0, 0.3);
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.header.is-active::after {
+  opacity: 1;
+}
+
+/* layout/main.css */
+
+.main {
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+
+/* modules/headline.css */
+
+
+/* modules/navigation.css */
+
+.navigation a {
+  color: inherit;
   display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.navigation .is-active {
+  background-color: #000;
+  color: #fff;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 511px;
 }
 
-.topnav a.active {
-  background-color: #2196F3;
-  color: white;
+.navigation__list {
+  list-style: none;
+  margin: -0.5em;
+  padding: 0;
 }
 
-.topnav .search-container {
-  float: right;
+.navigation__list--inline {
+  display: flex;
 }
 
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
+.navigation__item {
+  margin: 0.5em;
 }
 
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
+/* modules/paragraph.css */
+
+p {
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
 }
 
-.topnav .search-container button:hover {
-  background: #ccc;
+h1, h2{
+  text-align:center;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
+h1{
+  color:rgba(100, 50, 255, .8);
+  font-family: 'Pacifico', cursive;
+  color:#212121;
 }
+
+.rainbow {
+
+  /* Font options */
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 4px #000000;
+  font-size:40px;
+
+  /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite;
+
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+
+  /* Standar Syntax */
+  animation: rainbow 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+  0%{color: orange;}
+  10%{color: purple;}
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+  0%{color: orange;}
+  10%{color: purple;}
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+  0%{color: orange;}
+  10%{color: purple;}
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
+
+body{
+  background-color:#607D8B;
+}
+
